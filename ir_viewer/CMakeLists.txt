@@ -16,7 +16,7 @@ include_directories(include
 					${catkin_INCLUDE_DIRS}
                     ${GTK2_INCLUDE_DIRS})
 
-SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -march=native -Wall -std=c++0x -D__STRICT_ANSI__")
+SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fPIC -O3 -march=armv8-a -Wall -std=c++0x -D__STRICT_ANSI__")
 
 catkin_package(
   INCLUDE_DIRS ${catkin_INCLUDE_DIRS}

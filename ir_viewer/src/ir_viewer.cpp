@@ -75,10 +75,10 @@ void imageCallback(const sensor_msgs::ImageConstPtr& msg) {
     // get image
 
 #if ROS_VERSION_MINIMUM(ROS_MIN_MAJOR, ROS_MIN_MINOR, ROS_MIN_PATCH)
-    cv_bridge::CvImagePtr ptr = cv_bridge::toCvCopy(msg, "mono16");
+    cv_bridge::CvImagePtr ptr = cv_bridge::toCvCopy(msg, sensor_msgs::image_encodings::TYPE_16UC1);
     cv::Mat img = ptr->image;
 #else
-    cv::Mat img = bridge.imgMsgToCv(msg, "mono16");
+    cv::Mat img = bridge.imgMsgToCv(msg, sensor_msgs::image_encodings::TYPE_16UC1);
 #endif
 
     //convert 8 bit and false color conversion
