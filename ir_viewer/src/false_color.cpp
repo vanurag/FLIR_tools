@@ -37,7 +37,6 @@
 #include <opencv2/imgproc/imgproc.hpp>
 #include <boost/lexical_cast.hpp>
 #include <iomanip>
-#include "opencv2/contrib/retina.hpp"
 #include <ros/package.h>
 
 #define DEG2RAD 0.01745329
@@ -323,14 +322,6 @@ double converter_16_8::getMin(){
 }
 double converter_16_8::getMax(){
   return max_;
-}
-void converter_16_8::toneMapping(const cv::Mat& img16, cv::Mat& img8){
-  if(!retina_){
-    retina_.reset(new cv::Retina(img16.size(), false));
-    retina_->setup(ros::package::getPath("brisk") + "/include/flir/retina_params");
-  }
-  retina_->run(img16);
-  retina_->getParvo(img8);
 }
 
 //adjustment -3 for slightly wrong fit

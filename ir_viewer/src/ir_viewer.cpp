@@ -53,7 +53,7 @@
 
 #include <falsecolor.h>
 
-static const std::string IMAGE_NAME = "Infrared Image";
+static const std::string IMAGE_NAME = "Depth Image";
 
 // Platform-specific workaround for #3026: image_view doesn't close when
 // closing image window. On platforms using GTK+ we connect this to the
